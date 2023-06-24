@@ -1,0 +1,8 @@
+javascript
+langchain
+openai
+#chromadb
+gymnasium
+minecraft_launcher_lib
+psutil
+tiktoken
