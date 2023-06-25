@@ -159,53 +159,56 @@ if __name__ == "__main__":
         if recorder.iteration > max_iterations:
             print("Iteration limit reached")
             break
-        task, context = curriculum_agent.propose_next_task(
+        tasks, context = curriculum_agent.propose_next_task(
             events=last_events,
             env_info=global_info,
             max_retries=5,
         )
-        # llm_recorder.record([task, context], "llm-task")
-        print(
-            f"\033[35mStarting task {task} for at most {action_agent_task_max_retries} times\033[0m"
-        )
-        try:
-            messages, reward, done, info = rollout(
-                task=task,
-                context=context,
-                reset_env=reset_env,
-            )
-        except Exception as e:
-            time.sleep(3)  # wait for mineflayer to exit
-            info = {
-                "success": False,
-            }
-            # use red color background to print the error
-            print("Your last round rollout terminated due to error:")
-            print(f"\033[41m{e}\033[0m")
-        if (
-                task == "Place and deposit useless items into a chest"
-                or task.startswith("Deposit useless items into the chest at")
-        ):
-            continue
-        if info["success"]:
-            print(f"\033[35mCompleted task {task}.\033[0m")
-            skill_manager.add_skill(
-                program_name=task,
-                program_code=info["url"] + "\n\n" + info["sql"],
-            )
-            curriculum_agent.completed_tasks.append(task)
-        else:
-            curriculum_agent.failed_tasks.append(task)
+        llm_recorder.record([tasks, context], "llm-task")
+        # solve all the tasks.
+        for task in tasks:
             print(
-                f"\033[35mFailed to complete task {task}. Skipping to next task.\033[0m"
+                f"\033[35mStarting task {task} for at most {action_agent_task_max_retries} times\033[0m"
             )
-        # clean up tasks and dump to disk
-        curriculum_agent.clean_up_tasks()
-        print(
-            f"\033[35mCompleted tasks: {', '.join(curriculum_agent.completed_tasks)}\033[0m"
-        )
-        print(
-            f"\033[35mFailed tasks: {', '.join(curriculum_agent.failed_tasks)}\033[0m"
-        )
-        global_info = info
+            try:
+                messages, reward, done, info = rollout(
+                    task=task,
+                    context=context,
+                    reset_env=reset_env,
+                )
+            except Exception as e:
+                time.sleep(3)  # wait for mineflayer to exit
+                info = {
+                    "success": False,
+                }
+                # use red color background to print the error
+                print("Your last round rollout terminated due to error:")
+                print(f"\033[41m{e}\033[0m")
+            if (
+                    task == "Place and deposit useless items into a chest"
+                    or task.startswith("Deposit useless items into the chest at")
+            ):
+                continue
+            if info["success"]:
+                print(f"\033[35mCompleted task {task}.\033[0m")
+                skill_manager.add_skill(
+                    program_name=task,
+                    program_code=info["url"] + "\n\n" + info["sql"],
+                )
+                curriculum_agent.completed_tasks.append(task)
+            else:
+                curriculum_agent.failed_tasks.append(task)
+                print(
+                    f"\033[35mFailed to complete task {task}. Skipping to next task.\033[0m"
+                )
+            # clean up tasks and dump to disk
+            curriculum_agent.clean_up_tasks()
+            print(
+                f"\033[35mCompleted tasks: {', '.join(curriculum_agent.completed_tasks)}\033[0m"
+            )
+            print(
+                f"\033[35mFailed tasks: {', '.join(curriculum_agent.failed_tasks)}\033[0m"
+            )
+            global_info = info
+        # GPT-3.5 sleep time.
         time.sleep(env_wait_ticks)

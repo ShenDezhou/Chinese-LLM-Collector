@@ -176,12 +176,14 @@ class CurriculumAgent:
         )
         observation_str = ""
         for ob_key in observation_dict.keys():
-            observation_str += f"\t{observation_dict[ob_key]}\n"
-        content += f"Observation:\n{observation_str}"
+            observation_str += f"{observation_dict[ob_key]}\n"
+        content += f"{observation_str}"
+
         if env_info:
+            subsets_str = ", ".join(env_info['subsets'])
             content += f"Task: {env_info['task']}\n"
             content += f"Dataset: {env_info['dataset_name']}\n"
-            content += f"Subsets: {env_info['subsets']}\n"
+            content += f"Subsets: {subsets_str}\n"
             content += f"Working subset: {env_info['working_dataset_name']}\n"
             content += f"Splits: Train, Validation, Test\n"
             content += f"Split: {env_info['split']}\n\n"
@@ -198,7 +200,12 @@ class CurriculumAgent:
 
     def propose_next_task(self, *, events, env_info, max_retries=5):
         if self.progress == 0 and self.mode == "auto":
-            task = "Collect clue afqmc train"
+            task = ["Collect clue afqmc train"]
+            context = "You can collect clue afqmc test parquet in Chinese LLM Collector."
+            return task, context
+
+        if env_info is None:
+            task = ["Collect clue afqmc train"]
             context = "You can collect clue afqmc test parquet in Chinese LLM Collector."
             return task, context
 
@@ -235,12 +242,14 @@ class CurriculumAgent:
             )
 
     def parse_ai_message(self, message):
+        tasks = []
         task = ""
         for line in message.split("\n"):
             if line.startswith("Task:"):
                 task = line[5:].replace(".", "").strip()
+                tasks.append(task)
         assert task, "Task not found in Curriculum Agent response"
-        return {"next_task": task}
+        return {"next_task": tasks}
 
     def propose_next_manual_task(self):
         confirmed = False
