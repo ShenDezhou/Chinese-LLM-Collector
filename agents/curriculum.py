@@ -198,15 +198,13 @@ class CurriculumAgent:
         print(f"\033[35m****Curriculum Agent human message****\n{content}\033[0m")
         return HumanMessage(content=content)
 
-    def propose_next_task(self, *, events, env_info, max_retries=5):
-        if self.progress == 0 and self.mode == "auto":
+    def propose_next_task(self, *, cold_task, cold_context, events, env_info, max_retries=5):
+        if self.progress == 0 and self.mode == "auto" or env_info is None:
             task = ["Collect clue afqmc train"]
             context = "You can collect clue afqmc test parquet in Chinese LLM Collector."
-            return task, context
-
-        if env_info is None:
-            task = ["Collect clue afqmc train"]
-            context = "You can collect clue afqmc test parquet in Chinese LLM Collector."
+            if cold_task and cold_context:
+                task = [cold_task]
+                context = cold_context
             return task, context
 
         messages = [

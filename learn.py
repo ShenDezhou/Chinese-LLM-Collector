@@ -17,20 +17,28 @@ import getopt
 import sys
 
 openai_model = "gpt-3.5-turbo-0613"
+task="Collect clue afqmc train"
+context="You can collect clue afqmc train parquet in Chinese LLM Collector."
 argv = sys.argv[1:]
 try:
-    options, args = getopt.getopt(argv, "m:", ["model ="])
+    options, args = getopt.getopt(argv, "m:t:c:", ["model =", "task =", "context ="])
 except:
     print("Error Message ")
 
 for name, value in options:
     if name in ['-m', '--model']:
         openai_model = value
+    elif name in ['-t', '--task']:
+        task = value
+    elif name in ['-c', '--context']:
+        context = value
 print("USING:"+openai_model)
+print('task:'+task)
+print('context:'+context)
 recorder = U.EventRecorder()
 llm_recorder = U.EventRecorder()
 
-resume = True # if resume the skills
+resume = False # if resume the skills
 # Agents BEGIN.
 action_agent=ActionAgent(model_name=openai_model)
 critic_agent=CriticAgent(model_name=openai_model, llm_recorder=llm_recorder)
@@ -160,6 +168,8 @@ if __name__ == "__main__":
             print("Iteration limit reached")
             break
         tasks, context = curriculum_agent.propose_next_task(
+            cold_task=task,
+            cold_context=context,
             events=last_events,
             env_info=global_info,
             max_retries=5,
@@ -210,5 +220,10 @@ if __name__ == "__main__":
                 f"\033[35mFailed tasks: {', '.join(curriculum_agent.failed_tasks)}\033[0m"
             )
             global_info = info
+        last_events = env.step("")
         # GPT-3.5 sleep time.
         time.sleep(env_wait_ticks)
+        recorder.record({
+            "event": last_events,
+            "info": global_info
+        }, context)
