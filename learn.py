@@ -30,9 +30,9 @@ print("USING:"+openai_model)
 recorder = U.EventRecorder()
 llm_recorder = U.EventRecorder()
 
-resume = False # if resume the skills
+resume = True # if resume the skills
 # Agents BEGIN.
-action_agent=ActionAgent(model_name=openai_model, resume=resume)
+action_agent=ActionAgent(model_name=openai_model)
 critic_agent=CriticAgent(model_name=openai_model, llm_recorder=llm_recorder)
 curriculum_agent = CurriculumAgent(
     model_name=openai_model,
@@ -50,7 +50,7 @@ env=VoyagerEnv(server_host='http://transformers.science', server_port=33000)
 env_wait_ticks=20
 
 max_iterations=1
-action_agent_task_max_retries=4
+action_agent_task_max_retries=2
 reset_env=True
 reset_placed_if_failed=False
 
@@ -102,6 +102,9 @@ def step(task, context):
         raise RuntimeError("Failed to request CLLMC server")
     returned_data = res.json()
     subsets = returned_data["data"]
+    info["task"] = task
+    info["dataset_name"] = parts[0]
+    info["subsets"] = subsets
     if parts[1] not in subsets:
         return "subset is incorrect", 0, False, info
     data = {
@@ -109,6 +112,7 @@ def step(task, context):
         "working_dataset_name": parts[1],
         "split": parts[2]
     }
+    info.update(data)
     if len(parts) > 3:
         if len(parts) == 4  and '/' in parts[3]:
             data['current_part'] = parts[3].split('/')[0]
@@ -134,7 +138,7 @@ def step(task, context):
     if res.status_code != 200:
         raise RuntimeError("Failed to request CLLMC server")
     returned_data = res.json()
-    info = copy.deepcopy(returned_data)
+    info.update(returned_data)
     info["success"] = True
     info.update(data)
     return f"Task {task} is finished with success!", 0, True, info
@@ -150,17 +154,17 @@ def rollout(task, context, reset_env=True):
 
 if __name__ == "__main__":
     last_events = env.step("")
-    
+    global_info = None
     while True:
         if recorder.iteration > max_iterations:
             print("Iteration limit reached")
             break
         task, context = curriculum_agent.propose_next_task(
             events=last_events,
-            chest_observation="",
+            env_info=global_info,
             max_retries=5,
         )
-        llm_recorder.record([task, context], "llm-curri")
+        # llm_recorder.record([task, context], "llm-task")
         print(
             f"\033[35mStarting task {task} for at most {action_agent_task_max_retries} times\033[0m"
         )
@@ -203,3 +207,5 @@ if __name__ == "__main__":
         print(
             f"\033[35mFailed tasks: {', '.join(curriculum_agent.failed_tasks)}\033[0m"
         )
+        global_info = info
+        time.sleep(env_wait_ticks)

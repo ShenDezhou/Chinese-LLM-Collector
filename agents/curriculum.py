@@ -50,26 +50,27 @@ class CurriculumAgent:
                 f"{ckpt_dir}/curriculum/completed_tasks.json"
             )
             self.failed_tasks = U.load_json(f"{ckpt_dir}/curriculum/failed_tasks.json")
-            self.qa_cache = U.load_json(f"{ckpt_dir}/curriculum/qa_cache.json")
+            self.qa_cache = {}
+            # self.qa_cache = U.load_json(f"{ckpt_dir}/curriculum/qa_cache.json")
         else:
             self.completed_tasks = []
             self.failed_tasks = []
             self.qa_cache = {}
         # vectordb for qa cache
-        self.qa_cache_questions_vectordb = Chroma(
-            collection_name="qa_cache_questions_vectordb",
-            embedding_function=OpenAIEmbeddings(),
-            persist_directory=f"{ckpt_dir}/curriculum/vectordb",
-        )
-        assert self.qa_cache_questions_vectordb._collection.count() == len(
-            self.qa_cache
-        ), (
-            f"Curriculum Agent's qa cache question vectordb is not synced with qa_cache.json.\n"
-            f"There are {self.qa_cache_questions_vectordb._collection.count()} questions in vectordb "
-            f"but {len(self.qa_cache)} questions in qa_cache.json.\n"
-            f"Did you set resume=False when initializing the agent?\n"
-            f"You may need to manually delete the qa cache question vectordb directory for running from scratch.\n"
-        )
+        # self.qa_cache_questions_vectordb = Chroma(
+        #     collection_name="qa_cache_questions_vectordb",
+        #     embedding_function=OpenAIEmbeddings(),
+        #     persist_directory=f"{ckpt_dir}/curriculum/vectordb",
+        # )
+        # assert self.qa_cache_questions_vectordb._collection.count() == len(
+        #     self.qa_cache
+        # ), (
+        #     f"Curriculum Agent's qa cache question vectordb is not synced with qa_cache.json.\n"
+        #     f"There are {self.qa_cache_questions_vectordb._collection.count()} questions in vectordb "
+        #     f"but {len(self.qa_cache)} questions in qa_cache.json.\n"
+        #     f"Did you set resume=False when initializing the agent?\n"
+        #     f"You may need to manually delete the qa cache question vectordb directory for running from scratch.\n"
+        # )
         # if warm up not defined, initialize it as a dict, else, initialize all the missing value as a default value
         if not warm_up:
             warm_up = self.default_warmup
@@ -138,137 +139,76 @@ class CurriculumAgent:
         assert isinstance(system_message, SystemMessage)
         return system_message
 
-    def render_observation(self, *, events, chest_observation):
-        assert events[-1][0] == "observe", "Last event must be observe"
-        event = events[-1][1]
-        biome = event["status"]["biome"]
-        time_of_day = event["status"]["timeOfDay"]
-        voxels = event["voxels"]
-        block_records = event["blockRecords"]
-        entities = event["status"]["entities"]
-        health = event["status"]["health"]
-        hunger = event["status"]["food"]
-        position = event["status"]["position"]
-        equipment = event["status"]["equipment"]
-        inventory_used = event["status"]["inventoryUsed"]
-        inventory = event["inventory"]
-
-        if not any(
-            "dirt" in block
-            or "log" in block
-            or "grass" in block
-            or "sand" in block
-            or "snow" in block
-            for block in voxels
-        ):
-            biome = "underground"
-
-        other_blocks = ", ".join(
-            list(
-                set(block_records).difference(set(voxels).union(set(inventory.keys())))
-            )
-        )
-
-        other_blocks = other_blocks if other_blocks else "None"
-
-        nearby_entities = (
-            ", ".join([k for k, v in sorted(entities.items(), key=lambda x: x[1])])
-            if entities
-            else "None"
-        )
+    def render_observation(self, *, events):
+        folders = events.keys()
+        files_list = events.values()
+        subsets = []
+        parquets = []
+        for files in files_list:
+            for ele in files:
+                if 'parquet' in ele:
+                    parquets.append(ele)
+                else:
+                    subsets.append(ele)
+        folders_str = ", ".join(folders)
+        subset_str = ", ".join(subsets)
+        files_str = ", ".join(parquets)
 
         completed_tasks = (
             ", ".join(self.completed_tasks) if self.completed_tasks else "None"
         )
         failed_tasks = ", ".join(self.failed_tasks) if self.failed_tasks else "None"
 
-        # filter out optional inventory items if required
-        if self.progress < self.warm_up["optional_inventory_items"]:
-            inventory = {
-                k: v
-                for k, v in inventory.items()
-                if self._core_inv_items_regex.search(k) is not None
-            }
-
         observation = {
-            "context": "",
-            "biome": f"Biome: {biome}\n\n",
-            "time": f"Time: {time_of_day}\n\n",
-            "nearby_blocks": f"Nearby blocks: {', '.join(voxels) if voxels else 'None'}\n\n",
-            "other_blocks": f"Other blocks that are recently seen: {other_blocks}\n\n",
-            "nearby_entities": f"Nearby entities: {nearby_entities}\n\n",
-            "health": f"Health: {health:.1f}/20\n\n",
-            "hunger": f"Hunger: {hunger:.1f}/20\n\n",
-            "position": f"Position: x={position['x']:.1f}, y={position['y']:.1f}, z={position['z']:.1f}\n\n",
-            "equipment": f"Equipment: {equipment}\n\n",
-            "inventory": f"Inventory ({inventory_used}/36): {inventory if inventory else 'Empty'}\n\n",
-            "chests": chest_observation,
+            "downloaded_datasets": f"Downloaded datasets so far: {folders_str}\n",
+            "downloaded_subsets": f"Downloaded subsets so far: {subset_str}\n",
+            "downloaded_files": f"Downloaded dataset parquets so far: {files_str}\n",
             "completed_tasks": f"Completed tasks so far: {completed_tasks}\n\n",
             "failed_tasks": f"Failed tasks that are too hard: {failed_tasks}\n\n",
         }
         return observation
 
-    def render_human_message(self, *, events, chest_observation):
-        content = ""
-        # observation = self.render_observation(
-        #     events=events, chest_observation=chest_observation
-        # )
-        # if self.progress >= self.warm_up["context"]:
-        #     questions, answers = self.run_qa(
-        #         events=events, chest_observation=chest_observation
-        #     )
-        #     self.llm_recorder.record([observation, questions, answers], "llm-question")
-        #     i = 1
-        #     for question, answer in zip(questions, answers):
-        #         if "Answer: Unknown" in answer or "language model" in answer:
-        #             continue
-        #         observation["context"] += f"Question {i}: {question}\n"
-        #         observation["context"] += f"{answer}\n\n"
-        #         i += 1
-        #         if i > 5:
-        #             break
+    def render_human_message(self, *, events, env_info):
+        content = "\n"
 
-        # for key in self.curriculum_observations:
-        #     if self.progress >= self.warm_up[key]:
-        #         if self.warm_up[key] != 0:
-        #             should_include = random.random() < 0.8
-        #         else:
-        #             should_include = True
-        #         if should_include:
-        #             content += observation[key]
+        observation_dict = self.render_observation(
+            events=events
+        )
+        observation_str = ""
+        for ob_key in observation_dict.keys():
+            observation_str += f"\t{observation_dict[ob_key]}\n"
+        content += f"Observation:\n{observation_str}"
+        if env_info:
+            content += f"Task: {env_info['task']}\n"
+            content += f"Dataset: {env_info['dataset_name']}\n"
+            content += f"Subsets: {env_info['subsets']}\n"
+            content += f"Working subset: {env_info['working_dataset_name']}\n"
+            content += f"Splits: Train, Validation, Test\n"
+            content += f"Split: {env_info['split']}\n\n"
+        else:
+            content += f"Task: None\n"
+            content += f"Dataset: None\n"
+            content += f"Subsets: None\n"
+            content += f"Working subset: None\n"
+            content += f"Splits: Train, Validation, Test\n"
+            content += f"Split: None\n\n"
 
         print(f"\033[35m****Curriculum Agent human message****\n{content}\033[0m")
         return HumanMessage(content=content)
 
-    def propose_next_task(self, *, events, chest_observation, max_retries=5):
+    def propose_next_task(self, *, events, env_info, max_retries=5):
         if self.progress == 0 and self.mode == "auto":
-            task = "Collect clue tnews test"
-            context = "You can collect clue tnews test parquet in Chinese LLM Collector."
+            task = "Collect clue afqmc train"
+            context = "You can collect clue afqmc test parquet in Chinese LLM Collector."
             return task, context
-
-        # hard code task when inventory is almost full
-        # if events[-1][1]["status"]["inventoryUsed"] >= 33:
-        #     task = "Place and deposit useless items into a chest"
-        #     context = (
-        #         f"Your inventory have {events[-1][1]['status']['inventoryUsed']} occupied slots before depositing. "
-        #         "Place the chest in your inventory to the ground and choose some useless items to deposit. "
-        #         "After depositing, your inventory should only have 20 occupied slots. "
-        #         "You should deposit useless items such as andesite, dirt, cobblestone, etc. "
-        #         "Also, you can deposit low-level tools. "
-        #         "For example, if you have a stone pickaxe, you can deposit a wooden pickaxe. "
-        #         "Make sure the list of useless items are in your inventory "
-        #         "(do not list items already in the chest), "
-        #         "You can use bot.inventoryUsed() to check how many inventory slots are used."
-        #     )
-        #     return task, context
 
         messages = [
             self.render_system_message(),
             self.render_human_message(
-                events=events, chest_observation=""
+                events=events, env_info=env_info
             ),
         ]
-
+        # self.llm_recorder.record([messages[0].content, messages[1].content], "llm-curri")
         if self.mode == "auto":
             return self.propose_next_ai_task(messages=messages, max_retries=max_retries)
         elif self.mode == "manual":
@@ -283,7 +223,7 @@ class CurriculumAgent:
         try:
             response = self.parse_ai_message(curriculum)
             assert "next_task" in response
-            context = self.get_task_context(response["next_task"])
+            context = ""#self.get_task_context(response["next_task"])
             return response["next_task"], context
         except Exception as e:
             print(
