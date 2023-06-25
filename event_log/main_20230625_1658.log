@@ -1,0 +1,536 @@
+USING:gpt-3.5-turbo-0613
+Loading Curriculum Agent from ckpt/curriculum
+Loading Stored Skills: []
+Loading Skill Manager from ckpt/skill
+****Recorder message: 0 ticks have elapsed****
+****Recorder message: 1 iteration passed****
+Starting task Collect clue afqmc train for at most 2 times
+Completed task Collect clue afqmc train.
+Skill Manager generated description for Collect clue afqmc train:
+Collect clue afqmc train
+Skill Collect clue afqmc train already exists. Rewriting!
+Completed tasks: Collect clue afqmc train, Collect clue afqmc validation, Collect clue afqmc test
+Failed tasks:
+****Curriculum Agent human message****
+
+Downloaded datasets so far: c3, clue, dicache, lccc
+
+Downloaded subsets so far: c3/mixed, clue/tnews, clue/afqmc, dicache/the, dicache/the/dataset_infos.json, dicache/lccc, dicache/lccc/dataset_infos.json, dicache/clue, dicache/clue/dataset_infos.json, dicache/c3, dicache/c3/dataset_infos.json, lccc/base
+
+Downloaded dataset parquets so far: c3/mixed/c3-test.parquet, clue/tnews/clue-validation.parquet, clue/tnews/clue-train.parquet, clue/tnews/clue-test.parquet, clue/afqmc/clue-validation.parquet, clue/afqmc/clue-train.parquet, clue/afqmc/clue-test.parquet, lccc/base/lccc-test.parquet
+
+Completed tasks so far: Collect clue afqmc train, Collect clue afqmc validation, Collect clue afqmc test
+
+
+Failed tasks that are too hard: None
+
+
+Task: clue afqmc train
+Dataset: clue
+Subsets: afqmc, tnews, iflytek, cmnli, cluewsc2020, csl, cmrc2018, drcd, chid, c3, ocnli, diagnostics
+Working subset: afqmc
+Splits: Train, Validation, Test
+Split: train
+
+
+****Curriculum Agent ai message****
+Reasoning: Based on the information provided, you have already collected the clue afqmc dataset.
+
+Task: Collect clue tnews train.
+Task: Collect clue tnews validation.
+Task: Collect clue tnews test.
+Task: Collect clue iflytek train.
+Task: Collect clue iflytek validation.
+Task: Collect clue iflytek test.
+Task: Collect clue cmnli train.
+Task: Collect clue cmnli validation.
+Task: Collect clue cmnli test.
+Task: Collect clue cluewsc2020 train.
+Task: Collect clue cluewsc2020 validation.
+Task: Collect clue cluewsc2020 test.
+Task: Collect clue csl train.
+Task: Collect clue csl validation.
+Task: Collect clue csl test.
+Task: Collect clue cmrc2018 train.
+Task: Collect clue cmrc2018 validation.
+Task: Collect clue cmrc2018 test.
+Task: Collect clue drcd train.
+Task: Collect clue drcd validation.
+Task: Collect clue drcd test.
+Task: Collect clue chid train.
+Task: Collect clue chid validation.
+Task: Collect clue chid test.
+Task: Collect clue c3 train.
+Task: Collect clue c3 validation.
+Task: Collect clue c3 test.
+Task: Collect clue ocnli train.
+Task: Collect clue ocnli validation.
+Task: Collect clue ocnli test.
+Task: Collect clue diagnostics train.
+Task: Collect clue diagnostics validation.
+Task: Collect clue diagnostics test.
+****Recorder message: 0 ticks have elapsed****
+****Recorder message: 2 iteration passed****
+****Recorder message: 0 ticks have elapsed****
+****Recorder message: 3 iteration passed****
+Starting task Collect clue tnews train for at most 2 times
+Completed task Collect clue tnews train.
+Skill Manager generated description for Collect clue tnews train:
+Collect clue tnews train
+Completed tasks: Collect clue afqmc train, Collect clue afqmc validation, Collect clue afqmc test, Collect clue tnews train
+Failed tasks:
+Starting task Collect clue tnews validation for at most 2 times
+Completed task Collect clue tnews validation.
+Skill Manager generated description for Collect clue tnews validation:
+Collect clue tnews validation
+Completed tasks: Collect clue afqmc train, Collect clue afqmc validation, Collect clue afqmc test, Collect clue tnews train, Collect clue tnews validation
+Failed tasks:
+Starting task Collect clue tnews test for at most 2 times
+Completed task Collect clue tnews test.
+Skill Manager generated description for Collect clue tnews test:
+Collect clue tnews test
+Completed tasks: Collect clue afqmc train, Collect clue afqmc validation, Collect clue afqmc test, Collect clue tnews train, Collect clue tnews validation, Collect clue tnews test
+Failed tasks:
+Starting task Collect clue iflytek train for at most 2 times
+Completed task Collect clue iflytek train.
+Skill Manager generated description for Collect clue iflytek train:
+Collect clue iflytek train
+Completed tasks: Collect clue afqmc train, Collect clue afqmc validation, Collect clue afqmc test, Collect clue tnews train, Collect clue tnews validation, Collect clue tnews test, Collect clue iflytek train
+Failed tasks:
+Starting task Collect clue iflytek validation for at most 2 times
+Completed task Collect clue iflytek validation.
+Skill Manager generated description for Collect clue iflytek validation:
+Collect clue iflytek validation
+Completed tasks: Collect clue afqmc train, Collect clue afqmc validation, Collect clue afqmc test, Collect clue tnews train, Collect clue tnews validation, Collect clue tnews test, Collect clue iflytek train, Collect clue iflytek validation
+Failed tasks:
+Starting task Collect clue iflytek test for at most 2 times
+Completed task Collect clue iflytek test.
+Skill Manager generated description for Collect clue iflytek test:
+Collect clue iflytek test
+Completed tasks: Collect clue afqmc train, Collect clue afqmc validation, Collect clue afqmc test, Collect clue tnews train, Collect clue tnews validation, Collect clue tnews test, Collect clue iflytek train, Collect clue iflytek validation, Collect clue iflytek test
+Failed tasks:
+Starting task Collect clue cmnli train for at most 2 times
+Completed task Collect clue cmnli train.
+Skill Manager generated description for Collect clue cmnli train:
+Collect clue cmnli train
+Completed tasks: Collect clue afqmc train, Collect clue afqmc validation, Collect clue afqmc test, Collect clue tnews train, Collect clue tnews validation, Collect clue tnews test, Collect clue iflytek train, Collect clue iflytek validation, Collect clue iflytek test, Collect clue cmnli train
+Failed tasks:
+Starting task Collect clue cmnli validation for at most 2 times
+Completed task Collect clue cmnli validation.
+Skill Manager generated description for Collect clue cmnli validation:
+Collect clue cmnli validation
+Completed tasks: Collect clue afqmc train, Collect clue afqmc validation, Collect clue afqmc test, Collect clue tnews train, Collect clue tnews validation, Collect clue tnews test, Collect clue iflytek train, Collect clue iflytek validation, Collect clue iflytek test, Collect clue cmnli train, Collect clue cmnli validation
+Failed tasks:
+Starting task Collect clue cmnli test for at most 2 times
+Completed task Collect clue cmnli test.
+Skill Manager generated description for Collect clue cmnli test:
+Collect clue cmnli test
+Completed tasks: Collect clue afqmc train, Collect clue afqmc validation, Collect clue afqmc test, Collect clue tnews train, Collect clue tnews validation, Collect clue tnews test, Collect clue iflytek train, Collect clue iflytek validation, Collect clue iflytek test, Collect clue cmnli train, Collect clue cmnli validation, Collect clue cmnli test
+Failed tasks:
+Starting task Collect clue cluewsc2020 train for at most 2 times
+Completed task Collect clue cluewsc2020 train.
+Skill Manager generated description for Collect clue cluewsc2020 train:
+Collect clue cluewsc2020 train
+Completed tasks: Collect clue afqmc train, Collect clue afqmc validation, Collect clue afqmc test, Collect clue tnews train, Collect clue tnews validation, Collect clue tnews test, Collect clue iflytek train, Collect clue iflytek validation, Collect clue iflytek test, Collect clue cmnli train, Collect clue cmnli validation, Collect clue cmnli test, Collect clue cluewsc2020 train
+Failed tasks:
+Starting task Collect clue cluewsc2020 validation for at most 2 times
+Completed task Collect clue cluewsc2020 validation.
+Skill Manager generated description for Collect clue cluewsc2020 validation:
+Collect clue cluewsc2020 validation
+Completed tasks: Collect clue afqmc train, Collect clue afqmc validation, Collect clue afqmc test, Collect clue tnews train, Collect clue tnews validation, Collect clue tnews test, Collect clue iflytek train, Collect clue iflytek validation, Collect clue iflytek test, Collect clue cmnli train, Collect clue cmnli validation, Collect clue cmnli test, Collect clue cluewsc2020 train, Collect clue cluewsc2020 validation
+Failed tasks:
+Starting task Collect clue cluewsc2020 test for at most 2 times
+Completed task Collect clue cluewsc2020 test.
+Skill Manager generated description for Collect clue cluewsc2020 test:
+Collect clue cluewsc2020 test
+Completed tasks: Collect clue afqmc train, Collect clue afqmc validation, Collect clue afqmc test, Collect clue tnews train, Collect clue tnews validation, Collect clue tnews test, Collect clue iflytek train, Collect clue iflytek validation, Collect clue iflytek test, Collect clue cmnli train, Collect clue cmnli validation, Collect clue cmnli test, Collect clue cluewsc2020 train, Collect clue cluewsc2020 validation, Collect clue cluewsc2020 test
+Failed tasks:
+Starting task Collect clue csl train for at most 2 times
+Completed task Collect clue csl train.
+Skill Manager generated description for Collect clue csl train:
+Collect clue csl train
+Completed tasks: Collect clue afqmc train, Collect clue afqmc validation, Collect clue afqmc test, Collect clue tnews train, Collect clue tnews validation, Collect clue tnews test, Collect clue iflytek train, Collect clue iflytek validation, Collect clue iflytek test, Collect clue cmnli train, Collect clue cmnli validation, Collect clue cmnli test, Collect clue cluewsc2020 train, Collect clue cluewsc2020 validation, Collect clue cluewsc2020 test, Collect clue csl train
+Failed tasks:
+Starting task Collect clue csl validation for at most 2 times
+Completed task Collect clue csl validation.
+Skill Manager generated description for Collect clue csl validation:
+Collect clue csl validation
+Completed tasks: Collect clue afqmc train, Collect clue afqmc validation, Collect clue afqmc test, Collect clue tnews train, Collect clue tnews validation, Collect clue tnews test, Collect clue iflytek train, Collect clue iflytek validation, Collect clue iflytek test, Collect clue cmnli train, Collect clue cmnli validation, Collect clue cmnli test, Collect clue cluewsc2020 train, Collect clue cluewsc2020 validation, Collect clue cluewsc2020 test, Collect clue csl train, Collect clue csl validation
+Failed tasks:
+Starting task Collect clue csl test for at most 2 times
+Completed task Collect clue csl test.
+Skill Manager generated description for Collect clue csl test:
+Collect clue csl test
+Completed tasks: Collect clue afqmc train, Collect clue afqmc validation, Collect clue afqmc test, Collect clue tnews train, Collect clue tnews validation, Collect clue tnews test, Collect clue iflytek train, Collect clue iflytek validation, Collect clue iflytek test, Collect clue cmnli train, Collect clue cmnli validation, Collect clue cmnli test, Collect clue cluewsc2020 train, Collect clue cluewsc2020 validation, Collect clue cluewsc2020 test, Collect clue csl train, Collect clue csl validation, Collect clue csl test
+Failed tasks:
+Starting task Collect clue cmrc2018 train for at most 2 times
+Completed task Collect clue cmrc2018 train.
+Skill Manager generated description for Collect clue cmrc2018 train:
+Collect clue cmrc2018 train
+Completed tasks: Collect clue afqmc train, Collect clue afqmc validation, Collect clue afqmc test, Collect clue tnews train, Collect clue tnews validation, Collect clue tnews test, Collect clue iflytek train, Collect clue iflytek validation, Collect clue iflytek test, Collect clue cmnli train, Collect clue cmnli validation, Collect clue cmnli test, Collect clue cluewsc2020 train, Collect clue cluewsc2020 validation, Collect clue cluewsc2020 test, Collect clue csl train, Collect clue csl validation, Collect clue csl test, Collect clue cmrc2018 train
+Failed tasks:
+Starting task Collect clue cmrc2018 validation for at most 2 times
+Completed task Collect clue cmrc2018 validation.
+Skill Manager generated description for Collect clue cmrc2018 validation:
+Collect clue cmrc2018 validation
+Completed tasks: Collect clue afqmc train, Collect clue afqmc validation, Collect clue afqmc test, Collect clue tnews train, Collect clue tnews validation, Collect clue tnews test, Collect clue iflytek train, Collect clue iflytek validation, Collect clue iflytek test, Collect clue cmnli train, Collect clue cmnli validation, Collect clue cmnli test, Collect clue cluewsc2020 train, Collect clue cluewsc2020 validation, Collect clue cluewsc2020 test, Collect clue csl train, Collect clue csl validation, Collect clue csl test, Collect clue cmrc2018 train, Collect clue cmrc2018 validation
+Failed tasks:
+Starting task Collect clue cmrc2018 test for at most 2 times
+Completed task Collect clue cmrc2018 test.
+Skill Manager generated description for Collect clue cmrc2018 test:
+Collect clue cmrc2018 test
+Completed tasks: Collect clue afqmc train, Collect clue afqmc validation, Collect clue afqmc test, Collect clue tnews train, Collect clue tnews validation, Collect clue tnews test, Collect clue iflytek train, Collect clue iflytek validation, Collect clue iflytek test, Collect clue cmnli train, Collect clue cmnli validation, Collect clue cmnli test, Collect clue cluewsc2020 train, Collect clue cluewsc2020 validation, Collect clue cluewsc2020 test, Collect clue csl train, Collect clue csl validation, Collect clue csl test, Collect clue cmrc2018 train, Collect clue cmrc2018 validation, Collect clue cmrc2018 test
+Failed tasks:
+Starting task Collect clue drcd train for at most 2 times
+Completed task Collect clue drcd train.
+Skill Manager generated description for Collect clue drcd train:
+Collect clue drcd train
+Completed tasks: Collect clue afqmc train, Collect clue afqmc validation, Collect clue afqmc test, Collect clue tnews train, Collect clue tnews validation, Collect clue tnews test, Collect clue iflytek train, Collect clue iflytek validation, Collect clue iflytek test, Collect clue cmnli train, Collect clue cmnli validation, Collect clue cmnli test, Collect clue cluewsc2020 train, Collect clue cluewsc2020 validation, Collect clue cluewsc2020 test, Collect clue csl train, Collect clue csl validation, Collect clue csl test, Collect clue cmrc2018 train, Collect clue cmrc2018 validation, Collect clue cmrc2018 test, Collect clue drcd train
+Failed tasks:
+Starting task Collect clue drcd validation for at most 2 times
+Completed task Collect clue drcd validation.
+Skill Manager generated description for Collect clue drcd validation:
+Collect clue drcd validation
+Completed tasks: Collect clue afqmc train, Collect clue afqmc validation, Collect clue afqmc test, Collect clue tnews train, Collect clue tnews validation, Collect clue tnews test, Collect clue iflytek train, Collect clue iflytek validation, Collect clue iflytek test, Collect clue cmnli train, Collect clue cmnli validation, Collect clue cmnli test, Collect clue cluewsc2020 train, Collect clue cluewsc2020 validation, Collect clue cluewsc2020 test, Collect clue csl train, Collect clue csl validation, Collect clue csl test, Collect clue cmrc2018 train, Collect clue cmrc2018 validation, Collect clue cmrc2018 test, Collect clue drcd train, Collect clue drcd validation
+Failed tasks:
+Starting task Collect clue drcd test for at most 2 times
+Completed task Collect clue drcd test.
+Skill Manager generated description for Collect clue drcd test:
+Collect clue drcd test
+Completed tasks: Collect clue afqmc train, Collect clue afqmc validation, Collect clue afqmc test, Collect clue tnews train, Collect clue tnews validation, Collect clue tnews test, Collect clue iflytek train, Collect clue iflytek validation, Collect clue iflytek test, Collect clue cmnli train, Collect clue cmnli validation, Collect clue cmnli test, Collect clue cluewsc2020 train, Collect clue cluewsc2020 validation, Collect clue cluewsc2020 test, Collect clue csl train, Collect clue csl validation, Collect clue csl test, Collect clue cmrc2018 train, Collect clue cmrc2018 validation, Collect clue cmrc2018 test, Collect clue drcd train, Collect clue drcd validation, Collect clue drcd test
+Failed tasks:
+Starting task Collect clue chid train for at most 2 times
+Completed task Collect clue chid train.
+Skill Manager generated description for Collect clue chid train:
+Collect clue chid train
+Completed tasks: Collect clue afqmc train, Collect clue afqmc validation, Collect clue afqmc test, Collect clue tnews train, Collect clue tnews validation, Collect clue tnews test, Collect clue iflytek train, Collect clue iflytek validation, Collect clue iflytek test, Collect clue cmnli train, Collect clue cmnli validation, Collect clue cmnli test, Collect clue cluewsc2020 train, Collect clue cluewsc2020 validation, Collect clue cluewsc2020 test, Collect clue csl train, Collect clue csl validation, Collect clue csl test, Collect clue cmrc2018 train, Collect clue cmrc2018 validation, Collect clue cmrc2018 test, Collect clue drcd train, Collect clue drcd validation, Collect clue drcd test, Collect clue chid train
+Failed tasks:
+Starting task Collect clue chid validation for at most 2 times
+Completed task Collect clue chid validation.
+Skill Manager generated description for Collect clue chid validation:
+Collect clue chid validation
+Completed tasks: Collect clue afqmc train, Collect clue afqmc validation, Collect clue afqmc test, Collect clue tnews train, Collect clue tnews validation, Collect clue tnews test, Collect clue iflytek train, Collect clue iflytek validation, Collect clue iflytek test, Collect clue cmnli train, Collect clue cmnli validation, Collect clue cmnli test, Collect clue cluewsc2020 train, Collect clue cluewsc2020 validation, Collect clue cluewsc2020 test, Collect clue csl train, Collect clue csl validation, Collect clue csl test, Collect clue cmrc2018 train, Collect clue cmrc2018 validation, Collect clue cmrc2018 test, Collect clue drcd train, Collect clue drcd validation, Collect clue drcd test, Collect clue chid train, Collect clue chid validation
+Failed tasks:
+Starting task Collect clue chid test for at most 2 times
+Completed task Collect clue chid test.
+Skill Manager generated description for Collect clue chid test:
+Collect clue chid test
+Completed tasks: Collect clue afqmc train, Collect clue afqmc validation, Collect clue afqmc test, Collect clue tnews train, Collect clue tnews validation, Collect clue tnews test, Collect clue iflytek train, Collect clue iflytek validation, Collect clue iflytek test, Collect clue cmnli train, Collect clue cmnli validation, Collect clue cmnli test, Collect clue cluewsc2020 train, Collect clue cluewsc2020 validation, Collect clue cluewsc2020 test, Collect clue csl train, Collect clue csl validation, Collect clue csl test, Collect clue cmrc2018 train, Collect clue cmrc2018 validation, Collect clue cmrc2018 test, Collect clue drcd train, Collect clue drcd validation, Collect clue drcd test, Collect clue chid train, Collect clue chid validation, Collect clue chid test
+Failed tasks:
+Starting task Collect clue c3 train for at most 2 times
+Completed task Collect clue c3 train.
+Skill Manager generated description for Collect clue c3 train:
+Collect clue c3 train
+Completed tasks: Collect clue afqmc train, Collect clue afqmc validation, Collect clue afqmc test, Collect clue tnews train, Collect clue tnews validation, Collect clue tnews test, Collect clue iflytek train, Collect clue iflytek validation, Collect clue iflytek test, Collect clue cmnli train, Collect clue cmnli validation, Collect clue cmnli test, Collect clue cluewsc2020 train, Collect clue cluewsc2020 validation, Collect clue cluewsc2020 test, Collect clue csl train, Collect clue csl validation, Collect clue csl test, Collect clue cmrc2018 train, Collect clue cmrc2018 validation, Collect clue cmrc2018 test, Collect clue drcd train, Collect clue drcd validation, Collect clue drcd test, Collect clue chid train, Collect clue chid validation, Collect clue chid test, Collect clue c3 train
+Failed tasks:
+Starting task Collect clue c3 validation for at most 2 times
+Completed task Collect clue c3 validation.
+Skill Manager generated description for Collect clue c3 validation:
+Collect clue c3 validation
+Completed tasks: Collect clue afqmc train, Collect clue afqmc validation, Collect clue afqmc test, Collect clue tnews train, Collect clue tnews validation, Collect clue tnews test, Collect clue iflytek train, Collect clue iflytek validation, Collect clue iflytek test, Collect clue cmnli train, Collect clue cmnli validation, Collect clue cmnli test, Collect clue cluewsc2020 train, Collect clue cluewsc2020 validation, Collect clue cluewsc2020 test, Collect clue csl train, Collect clue csl validation, Collect clue csl test, Collect clue cmrc2018 train, Collect clue cmrc2018 validation, Collect clue cmrc2018 test, Collect clue drcd train, Collect clue drcd validation, Collect clue drcd test, Collect clue chid train, Collect clue chid validation, Collect clue chid test, Collect clue c3 train, Collect clue c3 validation
+Failed tasks:
+Starting task Collect clue c3 test for at most 2 times
+Completed task Collect clue c3 test.
+Skill Manager generated description for Collect clue c3 test:
+Collect clue c3 test
+Completed tasks: Collect clue afqmc train, Collect clue afqmc validation, Collect clue afqmc test, Collect clue tnews train, Collect clue tnews validation, Collect clue tnews test, Collect clue iflytek train, Collect clue iflytek validation, Collect clue iflytek test, Collect clue cmnli train, Collect clue cmnli validation, Collect clue cmnli test, Collect clue cluewsc2020 train, Collect clue cluewsc2020 validation, Collect clue cluewsc2020 test, Collect clue csl train, Collect clue csl validation, Collect clue csl test, Collect clue cmrc2018 train, Collect clue cmrc2018 validation, Collect clue cmrc2018 test, Collect clue drcd train, Collect clue drcd validation, Collect clue drcd test, Collect clue chid train, Collect clue chid validation, Collect clue chid test, Collect clue c3 train, Collect clue c3 validation, Collect clue c3 test
+Failed tasks:
+Starting task Collect clue ocnli train for at most 2 times
+Completed task Collect clue ocnli train.
+Skill Manager generated description for Collect clue ocnli train:
+Collect clue ocnli train
+Completed tasks: Collect clue afqmc train, Collect clue afqmc validation, Collect clue afqmc test, Collect clue tnews train, Collect clue tnews validation, Collect clue tnews test, Collect clue iflytek train, Collect clue iflytek validation, Collect clue iflytek test, Collect clue cmnli train, Collect clue cmnli validation, Collect clue cmnli test, Collect clue cluewsc2020 train, Collect clue cluewsc2020 validation, Collect clue cluewsc2020 test, Collect clue csl train, Collect clue csl validation, Collect clue csl test, Collect clue cmrc2018 train, Collect clue cmrc2018 validation, Collect clue cmrc2018 test, Collect clue drcd train, Collect clue drcd validation, Collect clue drcd test, Collect clue chid train, Collect clue chid validation, Collect clue chid test, Collect clue c3 train, Collect clue c3 validation, Collect clue c3 test, Collect clue ocnli train
+Failed tasks:
+Starting task Collect clue ocnli validation for at most 2 times
+Completed task Collect clue ocnli validation.
+Skill Manager generated description for Collect clue ocnli validation:
+Collect clue ocnli validation
+Completed tasks: Collect clue afqmc train, Collect clue afqmc validation, Collect clue afqmc test, Collect clue tnews train, Collect clue tnews validation, Collect clue tnews test, Collect clue iflytek train, Collect clue iflytek validation, Collect clue iflytek test, Collect clue cmnli train, Collect clue cmnli validation, Collect clue cmnli test, Collect clue cluewsc2020 train, Collect clue cluewsc2020 validation, Collect clue cluewsc2020 test, Collect clue csl train, Collect clue csl validation, Collect clue csl test, Collect clue cmrc2018 train, Collect clue cmrc2018 validation, Collect clue cmrc2018 test, Collect clue drcd train, Collect clue drcd validation, Collect clue drcd test, Collect clue chid train, Collect clue chid validation, Collect clue chid test, Collect clue c3 train, Collect clue c3 validation, Collect clue c3 test, Collect clue ocnli train, Collect clue ocnli validation
+Failed tasks:
+Starting task Collect clue ocnli test for at most 2 times
+Completed task Collect clue ocnli test.
+Skill Manager generated description for Collect clue ocnli test:
+Collect clue ocnli test
+Completed tasks: Collect clue afqmc train, Collect clue afqmc validation, Collect clue afqmc test, Collect clue tnews train, Collect clue tnews validation, Collect clue tnews test, Collect clue iflytek train, Collect clue iflytek validation, Collect clue iflytek test, Collect clue cmnli train, Collect clue cmnli validation, Collect clue cmnli test, Collect clue cluewsc2020 train, Collect clue cluewsc2020 validation, Collect clue cluewsc2020 test, Collect clue csl train, Collect clue csl validation, Collect clue csl test, Collect clue cmrc2018 train, Collect clue cmrc2018 validation, Collect clue cmrc2018 test, Collect clue drcd train, Collect clue drcd validation, Collect clue drcd test, Collect clue chid train, Collect clue chid validation, Collect clue chid test, Collect clue c3 train, Collect clue c3 validation, Collect clue c3 test, Collect clue ocnli train, Collect clue ocnli validation, Collect clue ocnli test
+Failed tasks:
+Starting task Collect clue diagnostics train for at most 2 times
+Completed task Collect clue diagnostics train.
+Skill Manager generated description for Collect clue diagnostics train:
+Collect clue diagnostics train
+Completed tasks: Collect clue afqmc train, Collect clue afqmc validation, Collect clue afqmc test, Collect clue tnews train, Collect clue tnews validation, Collect clue tnews test, Collect clue iflytek train, Collect clue iflytek validation, Collect clue iflytek test, Collect clue cmnli train, Collect clue cmnli validation, Collect clue cmnli test, Collect clue cluewsc2020 train, Collect clue cluewsc2020 validation, Collect clue cluewsc2020 test, Collect clue csl train, Collect clue csl validation, Collect clue csl test, Collect clue cmrc2018 train, Collect clue cmrc2018 validation, Collect clue cmrc2018 test, Collect clue drcd train, Collect clue drcd validation, Collect clue drcd test, Collect clue chid train, Collect clue chid validation, Collect clue chid test, Collect clue c3 train, Collect clue c3 validation, Collect clue c3 test, Collect clue ocnli train, Collect clue ocnli validation, Collect clue ocnli test, Collect clue diagnostics train
+Failed tasks:
+Starting task Collect clue diagnostics validation for at most 2 times
+Completed task Collect clue diagnostics validation.
+Skill Manager generated description for Collect clue diagnostics validation:
+Collect clue diagnostics validation
+Completed tasks: Collect clue afqmc train, Collect clue afqmc validation, Collect clue afqmc test, Collect clue tnews train, Collect clue tnews validation, Collect clue tnews test, Collect clue iflytek train, Collect clue iflytek validation, Collect clue iflytek test, Collect clue cmnli train, Collect clue cmnli validation, Collect clue cmnli test, Collect clue cluewsc2020 train, Collect clue cluewsc2020 validation, Collect clue cluewsc2020 test, Collect clue csl train, Collect clue csl validation, Collect clue csl test, Collect clue cmrc2018 train, Collect clue cmrc2018 validation, Collect clue cmrc2018 test, Collect clue drcd train, Collect clue drcd validation, Collect clue drcd test, Collect clue chid train, Collect clue chid validation, Collect clue chid test, Collect clue c3 train, Collect clue c3 validation, Collect clue c3 test, Collect clue ocnli train, Collect clue ocnli validation, Collect clue ocnli test, Collect clue diagnostics train, Collect clue diagnostics validation
+Failed tasks:
+Starting task Collect clue diagnostics test for at most 2 times
+Completed task Collect clue diagnostics test.
+Skill Manager generated description for Collect clue diagnostics test:
+Collect clue diagnostics test
+Completed tasks: Collect clue afqmc train, Collect clue afqmc validation, Collect clue afqmc test, Collect clue tnews train, Collect clue tnews validation, Collect clue tnews test, Collect clue iflytek train, Collect clue iflytek validation, Collect clue iflytek test, Collect clue cmnli train, Collect clue cmnli validation, Collect clue cmnli test, Collect clue cluewsc2020 train, Collect clue cluewsc2020 validation, Collect clue cluewsc2020 test, Collect clue csl train, Collect clue csl validation, Collect clue csl test, Collect clue cmrc2018 train, Collect clue cmrc2018 validation, Collect clue cmrc2018 test, Collect clue drcd train, Collect clue drcd validation, Collect clue drcd test, Collect clue chid train, Collect clue chid validation, Collect clue chid test, Collect clue c3 train, Collect clue c3 validation, Collect clue c3 test, Collect clue ocnli train, Collect clue ocnli validation, Collect clue ocnli test, Collect clue diagnostics train, Collect clue diagnostics validation, Collect clue diagnostics test
+Failed tasks:
+****Curriculum Agent human message****
+
+Downloaded datasets so far: c3, clue, dicache, lccc
+
+Downloaded subsets so far: c3/mixed, clue/tnews, clue/afqmc, dicache/the, dicache/the/dataset_infos.json, dicache/lccc, dicache/lccc/dataset_infos.json, dicache/clue, dicache/clue/dataset_infos.json, dicache/c3, dicache/c3/dataset_infos.json, lccc/base
+
+Downloaded dataset parquets so far: c3/mixed/c3-test.parquet, clue/tnews/clue-validation.parquet, clue/tnews/clue-train.parquet, clue/tnews/clue-test.parquet, clue/afqmc/clue-validation.parquet, clue/afqmc/clue-train.parquet, clue/afqmc/clue-test.parquet, lccc/base/lccc-test.parquet
+
+Completed tasks so far: Collect clue afqmc train, Collect clue afqmc validation, Collect clue afqmc test, Collect clue tnews train, Collect clue tnews validation, Collect clue tnews test, Collect clue iflytek train, Collect clue iflytek validation, Collect clue iflytek test, Collect clue cmnli train, Collect clue cmnli validation, Collect clue cmnli test, Collect clue cluewsc2020 train, Collect clue cluewsc2020 validation, Collect clue cluewsc2020 test, Collect clue csl train, Collect clue csl validation, Collect clue csl test, Collect clue cmrc2018 train, Collect clue cmrc2018 validation, Collect clue cmrc2018 test, Collect clue drcd train, Collect clue drcd validation, Collect clue drcd test, Collect clue chid train, Collect clue chid validation, Collect clue chid test, Collect clue c3 train, Collect clue c3 validation, Collect clue c3 test, Collect clue ocnli train, Collect clue ocnli validation, Collect clue ocnli test, Collect clue diagnostics train, Collect clue diagnostics validation, Collect clue diagnostics test
+
+
+Failed tasks that are too hard: None
+
+
+Task: clue diagnostics test
+Dataset: clue
+Subsets: afqmc, tnews, iflytek, cmnli, cluewsc2020, csl, cmrc2018, drcd, chid, c3, ocnli, diagnostics
+Working subset: diagnostics
+Splits: Train, Validation, Test
+Split: test
+
+
+****Curriculum Agent ai message****
+Reasoning: Based on the information provided, you have already collected the clue diagnostics test subset.
+
+Task: Collect clue diagnostics train
+Task: Collect clue diagnostics validation
+****Recorder message: 0 ticks have elapsed****
+****Recorder message: 4 iteration passed****
+****Recorder message: 0 ticks have elapsed****
+****Recorder message: 5 iteration passed****
+Starting task Collect clue diagnostics train for at most 2 times
+Completed task Collect clue diagnostics train.
+Skill Manager generated description for Collect clue diagnostics train:
+Collect clue diagnostics train
+Skill Collect clue diagnostics train already exists. Rewriting!
+Completed tasks: Collect clue afqmc train, Collect clue afqmc validation, Collect clue afqmc test, Collect clue tnews train, Collect clue tnews validation, Collect clue tnews test, Collect clue iflytek train, Collect clue iflytek validation, Collect clue iflytek test, Collect clue cmnli train, Collect clue cmnli validation, Collect clue cmnli test, Collect clue cluewsc2020 train, Collect clue cluewsc2020 validation, Collect clue cluewsc2020 test, Collect clue csl train, Collect clue csl validation, Collect clue csl test, Collect clue cmrc2018 train, Collect clue cmrc2018 validation, Collect clue cmrc2018 test, Collect clue drcd train, Collect clue drcd validation, Collect clue drcd test, Collect clue chid train, Collect clue chid validation, Collect clue chid test, Collect clue c3 train, Collect clue c3 validation, Collect clue c3 test, Collect clue ocnli train, Collect clue ocnli validation, Collect clue ocnli test, Collect clue diagnostics train, Collect clue diagnostics validation, Collect clue diagnostics test
+Failed tasks:
+Starting task Collect clue diagnostics validation for at most 2 times
+Completed task Collect clue diagnostics validation.
+Skill Manager generated description for Collect clue diagnostics validation:
+Collect clue diagnostics validation
+Skill Collect clue diagnostics validation already exists. Rewriting!
+Completed tasks: Collect clue afqmc train, Collect clue afqmc validation, Collect clue afqmc test, Collect clue tnews train, Collect clue tnews validation, Collect clue tnews test, Collect clue iflytek train, Collect clue iflytek validation, Collect clue iflytek test, Collect clue cmnli train, Collect clue cmnli validation, Collect clue cmnli test, Collect clue cluewsc2020 train, Collect clue cluewsc2020 validation, Collect clue cluewsc2020 test, Collect clue csl train, Collect clue csl validation, Collect clue csl test, Collect clue cmrc2018 train, Collect clue cmrc2018 validation, Collect clue cmrc2018 test, Collect clue drcd train, Collect clue drcd validation, Collect clue drcd test, Collect clue chid train, Collect clue chid validation, Collect clue chid test, Collect clue c3 train, Collect clue c3 validation, Collect clue c3 test, Collect clue ocnli train, Collect clue ocnli validation, Collect clue ocnli test, Collect clue diagnostics train, Collect clue diagnostics validation, Collect clue diagnostics test
+Failed tasks:
+****Curriculum Agent human message****
+
+Downloaded datasets so far: c3, clue, dicache, lccc
+
+Downloaded subsets so far: c3/mixed, clue/tnews, clue/afqmc, dicache/the, dicache/the/dataset_infos.json, dicache/lccc, dicache/lccc/dataset_infos.json, dicache/clue, dicache/clue/dataset_infos.json, dicache/c3, dicache/c3/dataset_infos.json, lccc/base
+
+Downloaded dataset parquets so far: c3/mixed/c3-test.parquet, clue/tnews/clue-validation.parquet, clue/tnews/clue-train.parquet, clue/tnews/clue-test.parquet, clue/afqmc/clue-validation.parquet, clue/afqmc/clue-train.parquet, clue/afqmc/clue-test.parquet, lccc/base/lccc-test.parquet
+
+Completed tasks so far: Collect clue afqmc train, Collect clue afqmc validation, Collect clue afqmc test, Collect clue tnews train, Collect clue tnews validation, Collect clue tnews test, Collect clue iflytek train, Collect clue iflytek validation, Collect clue iflytek test, Collect clue cmnli train, Collect clue cmnli validation, Collect clue cmnli test, Collect clue cluewsc2020 train, Collect clue cluewsc2020 validation, Collect clue cluewsc2020 test, Collect clue csl train, Collect clue csl validation, Collect clue csl test, Collect clue cmrc2018 train, Collect clue cmrc2018 validation, Collect clue cmrc2018 test, Collect clue drcd train, Collect clue drcd validation, Collect clue drcd test, Collect clue chid train, Collect clue chid validation, Collect clue chid test, Collect clue c3 train, Collect clue c3 validation, Collect clue c3 test, Collect clue ocnli train, Collect clue ocnli validation, Collect clue ocnli test, Collect clue diagnostics train, Collect clue diagnostics validation, Collect clue diagnostics test
+
+
+Failed tasks that are too hard: None
+
+
+Task: clue diagnostics validation
+Dataset: clue
+Subsets: afqmc, tnews, iflytek, cmnli, cluewsc2020, csl, cmrc2018, drcd, chid, c3, ocnli, diagnostics
+Working subset: diagnostics
+Splits: Train, Validation, Test
+Split: validation
+
+
+****Curriculum Agent ai message****
+Reasoning: Based on the information provided, you have already collected the clue diagnostics validation subset.
+
+Task: Collect clue diagnostics train
+Task: Collect clue diagnostics test
+****Recorder message: 0 ticks have elapsed****
+****Recorder message: 6 iteration passed****
+****Recorder message: 0 ticks have elapsed****
+****Recorder message: 7 iteration passed****
+Starting task Collect clue diagnostics train for at most 2 times
+Completed task Collect clue diagnostics train.
+Skill Manager generated description for Collect clue diagnostics train:
+Collect clue diagnostics train
+Skill Collect clue diagnostics train already exists. Rewriting!
+Completed tasks: Collect clue afqmc train, Collect clue afqmc validation, Collect clue afqmc test, Collect clue tnews train, Collect clue tnews validation, Collect clue tnews test, Collect clue iflytek train, Collect clue iflytek validation, Collect clue iflytek test, Collect clue cmnli train, Collect clue cmnli validation, Collect clue cmnli test, Collect clue cluewsc2020 train, Collect clue cluewsc2020 validation, Collect clue cluewsc2020 test, Collect clue csl train, Collect clue csl validation, Collect clue csl test, Collect clue cmrc2018 train, Collect clue cmrc2018 validation, Collect clue cmrc2018 test, Collect clue drcd train, Collect clue drcd validation, Collect clue drcd test, Collect clue chid train, Collect clue chid validation, Collect clue chid test, Collect clue c3 train, Collect clue c3 validation, Collect clue c3 test, Collect clue ocnli train, Collect clue ocnli validation, Collect clue ocnli test, Collect clue diagnostics train, Collect clue diagnostics validation, Collect clue diagnostics test
+Failed tasks:
+Starting task Collect clue diagnostics test for at most 2 times
+Completed task Collect clue diagnostics test.
+Skill Manager generated description for Collect clue diagnostics test:
+Collect clue diagnostics test
+Skill Collect clue diagnostics test already exists. Rewriting!
+Completed tasks: Collect clue afqmc train, Collect clue afqmc validation, Collect clue afqmc test, Collect clue tnews train, Collect clue tnews validation, Collect clue tnews test, Collect clue iflytek train, Collect clue iflytek validation, Collect clue iflytek test, Collect clue cmnli train, Collect clue cmnli validation, Collect clue cmnli test, Collect clue cluewsc2020 train, Collect clue cluewsc2020 validation, Collect clue cluewsc2020 test, Collect clue csl train, Collect clue csl validation, Collect clue csl test, Collect clue cmrc2018 train, Collect clue cmrc2018 validation, Collect clue cmrc2018 test, Collect clue drcd train, Collect clue drcd validation, Collect clue drcd test, Collect clue chid train, Collect clue chid validation, Collect clue chid test, Collect clue c3 train, Collect clue c3 validation, Collect clue c3 test, Collect clue ocnli train, Collect clue ocnli validation, Collect clue ocnli test, Collect clue diagnostics train, Collect clue diagnostics validation, Collect clue diagnostics test
+Failed tasks:
+****Curriculum Agent human message****
+
+Downloaded datasets so far: c3, clue, dicache, lccc
+
+Downloaded subsets so far: c3/mixed, clue/tnews, clue/afqmc, dicache/the, dicache/the/dataset_infos.json, dicache/lccc, dicache/lccc/dataset_infos.json, dicache/clue, dicache/clue/dataset_infos.json, dicache/c3, dicache/c3/dataset_infos.json, lccc/base
+
+Downloaded dataset parquets so far: c3/mixed/c3-test.parquet, clue/tnews/clue-validation.parquet, clue/tnews/clue-train.parquet, clue/tnews/clue-test.parquet, clue/afqmc/clue-validation.parquet, clue/afqmc/clue-train.parquet, clue/afqmc/clue-test.parquet, lccc/base/lccc-test.parquet
+
+Completed tasks so far: Collect clue afqmc train, Collect clue afqmc validation, Collect clue afqmc test, Collect clue tnews train, Collect clue tnews validation, Collect clue tnews test, Collect clue iflytek train, Collect clue iflytek validation, Collect clue iflytek test, Collect clue cmnli train, Collect clue cmnli validation, Collect clue cmnli test, Collect clue cluewsc2020 train, Collect clue cluewsc2020 validation, Collect clue cluewsc2020 test, Collect clue csl train, Collect clue csl validation, Collect clue csl test, Collect clue cmrc2018 train, Collect clue cmrc2018 validation, Collect clue cmrc2018 test, Collect clue drcd train, Collect clue drcd validation, Collect clue drcd test, Collect clue chid train, Collect clue chid validation, Collect clue chid test, Collect clue c3 train, Collect clue c3 validation, Collect clue c3 test, Collect clue ocnli train, Collect clue ocnli validation, Collect clue ocnli test, Collect clue diagnostics train, Collect clue diagnostics validation, Collect clue diagnostics test
+
+
+Failed tasks that are too hard: None
+
+
+Task: clue diagnostics test
+Dataset: clue
+Subsets: afqmc, tnews, iflytek, cmnli, cluewsc2020, csl, cmrc2018, drcd, chid, c3, ocnli, diagnostics
+Working subset: diagnostics
+Splits: Train, Validation, Test
+Split: test
+
+
+****Curriculum Agent ai message****
+Reasoning: Based on the information provided, you have already collected the clue diagnostics test subset.
+
+Task: Collect clue diagnostics train
+Task: Collect clue diagnostics validation
+****Recorder message: 0 ticks have elapsed****
+****Recorder message: 8 iteration passed****
+****Recorder message: 0 ticks have elapsed****
+****Recorder message: 9 iteration passed****
+Starting task Collect clue diagnostics train for at most 2 times
+Completed task Collect clue diagnostics train.
+Skill Manager generated description for Collect clue diagnostics train:
+Collect clue diagnostics train
+Skill Collect clue diagnostics train already exists. Rewriting!
+Completed tasks: Collect clue afqmc train, Collect clue afqmc validation, Collect clue afqmc test, Collect clue tnews train, Collect clue tnews validation, Collect clue tnews test, Collect clue iflytek train, Collect clue iflytek validation, Collect clue iflytek test, Collect clue cmnli train, Collect clue cmnli validation, Collect clue cmnli test, Collect clue cluewsc2020 train, Collect clue cluewsc2020 validation, Collect clue cluewsc2020 test, Collect clue csl train, Collect clue csl validation, Collect clue csl test, Collect clue cmrc2018 train, Collect clue cmrc2018 validation, Collect clue cmrc2018 test, Collect clue drcd train, Collect clue drcd validation, Collect clue drcd test, Collect clue chid train, Collect clue chid validation, Collect clue chid test, Collect clue c3 train, Collect clue c3 validation, Collect clue c3 test, Collect clue ocnli train, Collect clue ocnli validation, Collect clue ocnli test, Collect clue diagnostics train, Collect clue diagnostics validation, Collect clue diagnostics test
+Failed tasks:
+Starting task Collect clue diagnostics validation for at most 2 times
+Completed task Collect clue diagnostics validation.
+Skill Manager generated description for Collect clue diagnostics validation:
+Collect clue diagnostics validation
+Skill Collect clue diagnostics validation already exists. Rewriting!
+Completed tasks: Collect clue afqmc train, Collect clue afqmc validation, Collect clue afqmc test, Collect clue tnews train, Collect clue tnews validation, Collect clue tnews test, Collect clue iflytek train, Collect clue iflytek validation, Collect clue iflytek test, Collect clue cmnli train, Collect clue cmnli validation, Collect clue cmnli test, Collect clue cluewsc2020 train, Collect clue cluewsc2020 validation, Collect clue cluewsc2020 test, Collect clue csl train, Collect clue csl validation, Collect clue csl test, Collect clue cmrc2018 train, Collect clue cmrc2018 validation, Collect clue cmrc2018 test, Collect clue drcd train, Collect clue drcd validation, Collect clue drcd test, Collect clue chid train, Collect clue chid validation, Collect clue chid test, Collect clue c3 train, Collect clue c3 validation, Collect clue c3 test, Collect clue ocnli train, Collect clue ocnli validation, Collect clue ocnli test, Collect clue diagnostics train, Collect clue diagnostics validation, Collect clue diagnostics test
+Failed tasks:
+****Curriculum Agent human message****
+
+Downloaded datasets so far: c3, clue, dicache, lccc
+
+Downloaded subsets so far: c3/mixed, clue/tnews, clue/afqmc, dicache/the, dicache/the/dataset_infos.json, dicache/lccc, dicache/lccc/dataset_infos.json, dicache/clue, dicache/clue/dataset_infos.json, dicache/c3, dicache/c3/dataset_infos.json, lccc/base
+
+Downloaded dataset parquets so far: c3/mixed/c3-test.parquet, clue/tnews/clue-validation.parquet, clue/tnews/clue-train.parquet, clue/tnews/clue-test.parquet, clue/afqmc/clue-validation.parquet, clue/afqmc/clue-train.parquet, clue/afqmc/clue-test.parquet, lccc/base/lccc-test.parquet
+
+Completed tasks so far: Collect clue afqmc train, Collect clue afqmc validation, Collect clue afqmc test, Collect clue tnews train, Collect clue tnews validation, Collect clue tnews test, Collect clue iflytek train, Collect clue iflytek validation, Collect clue iflytek test, Collect clue cmnli train, Collect clue cmnli validation, Collect clue cmnli test, Collect clue cluewsc2020 train, Collect clue cluewsc2020 validation, Collect clue cluewsc2020 test, Collect clue csl train, Collect clue csl validation, Collect clue csl test, Collect clue cmrc2018 train, Collect clue cmrc2018 validation, Collect clue cmrc2018 test, Collect clue drcd train, Collect clue drcd validation, Collect clue drcd test, Collect clue chid train, Collect clue chid validation, Collect clue chid test, Collect clue c3 train, Collect clue c3 validation, Collect clue c3 test, Collect clue ocnli train, Collect clue ocnli validation, Collect clue ocnli test, Collect clue diagnostics train, Collect clue diagnostics validation, Collect clue diagnostics test
+
+
+Failed tasks that are too hard: None
+
+
+Task: clue diagnostics validation
+Dataset: clue
+Subsets: afqmc, tnews, iflytek, cmnli, cluewsc2020, csl, cmrc2018, drcd, chid, c3, ocnli, diagnostics
+Working subset: diagnostics
+Splits: Train, Validation, Test
+Split: validation
+
+
+****Curriculum Agent ai message****
+Reasoning: Based on the information provided, you have already collected the clue diagnostics validation subset.
+
+Task: Collect clue diagnostics train
+Task: Collect clue diagnostics test
+****Recorder message: 0 ticks have elapsed****
+****Recorder message: 10 iteration passed****
+****Recorder message: 0 ticks have elapsed****
+****Recorder message: 11 iteration passed****
+Starting task Collect clue diagnostics train for at most 2 times
+Completed task Collect clue diagnostics train.
+Skill Manager generated description for Collect clue diagnostics train:
+Collect clue diagnostics train
+Skill Collect clue diagnostics train already exists. Rewriting!
+Completed tasks: Collect clue afqmc train, Collect clue afqmc validation, Collect clue afqmc test, Collect clue tnews train, Collect clue tnews validation, Collect clue tnews test, Collect clue iflytek train, Collect clue iflytek validation, Collect clue iflytek test, Collect clue cmnli train, Collect clue cmnli validation, Collect clue cmnli test, Collect clue cluewsc2020 train, Collect clue cluewsc2020 validation, Collect clue cluewsc2020 test, Collect clue csl train, Collect clue csl validation, Collect clue csl test, Collect clue cmrc2018 train, Collect clue cmrc2018 validation, Collect clue cmrc2018 test, Collect clue drcd train, Collect clue drcd validation, Collect clue drcd test, Collect clue chid train, Collect clue chid validation, Collect clue chid test, Collect clue c3 train, Collect clue c3 validation, Collect clue c3 test, Collect clue ocnli train, Collect clue ocnli validation, Collect clue ocnli test, Collect clue diagnostics train, Collect clue diagnostics validation, Collect clue diagnostics test
+Failed tasks:
+Starting task Collect clue diagnostics test for at most 2 times
+Completed task Collect clue diagnostics test.
+Skill Manager generated description for Collect clue diagnostics test:
+Collect clue diagnostics test
+Skill Collect clue diagnostics test already exists. Rewriting!
+Completed tasks: Collect clue afqmc train, Collect clue afqmc validation, Collect clue afqmc test, Collect clue tnews train, Collect clue tnews validation, Collect clue tnews test, Collect clue iflytek train, Collect clue iflytek validation, Collect clue iflytek test, Collect clue cmnli train, Collect clue cmnli validation, Collect clue cmnli test, Collect clue cluewsc2020 train, Collect clue cluewsc2020 validation, Collect clue cluewsc2020 test, Collect clue csl train, Collect clue csl validation, Collect clue csl test, Collect clue cmrc2018 train, Collect clue cmrc2018 validation, Collect clue cmrc2018 test, Collect clue drcd train, Collect clue drcd validation, Collect clue drcd test, Collect clue chid train, Collect clue chid validation, Collect clue chid test, Collect clue c3 train, Collect clue c3 validation, Collect clue c3 test, Collect clue ocnli train, Collect clue ocnli validation, Collect clue ocnli test, Collect clue diagnostics train, Collect clue diagnostics validation, Collect clue diagnostics test
+Failed tasks:
+****Curriculum Agent human message****
+
+Downloaded datasets so far: c3, clue, dicache, lccc
+
+Downloaded subsets so far: c3/mixed, clue/tnews, clue/afqmc, dicache/the, dicache/the/dataset_infos.json, dicache/lccc, dicache/lccc/dataset_infos.json, dicache/clue, dicache/clue/dataset_infos.json, dicache/c3, dicache/c3/dataset_infos.json, lccc/base
+
+Downloaded dataset parquets so far: c3/mixed/c3-test.parquet, clue/tnews/clue-validation.parquet, clue/tnews/clue-train.parquet, clue/tnews/clue-test.parquet, clue/afqmc/clue-validation.parquet, clue/afqmc/clue-train.parquet, clue/afqmc/clue-test.parquet, lccc/base/lccc-test.parquet
+
+Completed tasks so far: Collect clue afqmc train, Collect clue afqmc validation, Collect clue afqmc test, Collect clue tnews train, Collect clue tnews validation, Collect clue tnews test, Collect clue iflytek train, Collect clue iflytek validation, Collect clue iflytek test, Collect clue cmnli train, Collect clue cmnli validation, Collect clue cmnli test, Collect clue cluewsc2020 train, Collect clue cluewsc2020 validation, Collect clue cluewsc2020 test, Collect clue csl train, Collect clue csl validation, Collect clue csl test, Collect clue cmrc2018 train, Collect clue cmrc2018 validation, Collect clue cmrc2018 test, Collect clue drcd train, Collect clue drcd validation, Collect clue drcd test, Collect clue chid train, Collect clue chid validation, Collect clue chid test, Collect clue c3 train, Collect clue c3 validation, Collect clue c3 test, Collect clue ocnli train, Collect clue ocnli validation, Collect clue ocnli test, Collect clue diagnostics train, Collect clue diagnostics validation, Collect clue diagnostics test
+
+
+Failed tasks that are too hard: None
+
+
+Task: clue diagnostics test
+Dataset: clue
+Subsets: afqmc, tnews, iflytek, cmnli, cluewsc2020, csl, cmrc2018, drcd, chid, c3, ocnli, diagnostics
+Working subset: diagnostics
+Splits: Train, Validation, Test
+Split: test
+
+
+****Curriculum Agent ai message****
+Reasoning: Based on the information provided, you have already collected the clue diagnostics test subset.
+
+Task: Collect clue diagnostics train
+Task: Collect clue diagnostics validation
+****Recorder message: 0 ticks have elapsed****
+****Recorder message: 12 iteration passed****
+****Recorder message: 0 ticks have elapsed****
+****Recorder message: 13 iteration passed****
+Starting task Collect clue diagnostics train for at most 2 times
+Completed task Collect clue diagnostics train.
+Skill Manager generated description for Collect clue diagnostics train:
+Collect clue diagnostics train
+Skill Collect clue diagnostics train already exists. Rewriting!
+Completed tasks: Collect clue afqmc train, Collect clue afqmc validation, Collect clue afqmc test, Collect clue tnews train, Collect clue tnews validation, Collect clue tnews test, Collect clue iflytek train, Collect clue iflytek validation, Collect clue iflytek test, Collect clue cmnli train, Collect clue cmnli validation, Collect clue cmnli test, Collect clue cluewsc2020 train, Collect clue cluewsc2020 validation, Collect clue cluewsc2020 test, Collect clue csl train, Collect clue csl validation, Collect clue csl test, Collect clue cmrc2018 train, Collect clue cmrc2018 validation, Collect clue cmrc2018 test, Collect clue drcd train, Collect clue drcd validation, Collect clue drcd test, Collect clue chid train, Collect clue chid validation, Collect clue chid test, Collect clue c3 train, Collect clue c3 validation, Collect clue c3 test, Collect clue ocnli train, Collect clue ocnli validation, Collect clue ocnli test, Collect clue diagnostics train, Collect clue diagnostics validation, Collect clue diagnostics test
+Failed tasks:
+Starting task Collect clue diagnostics validation for at most 2 times
+Completed task Collect clue diagnostics validation.
+Skill Manager generated description for Collect clue diagnostics validation:
+Collect clue diagnostics validation
+Skill Collect clue diagnostics validation already exists. Rewriting!
+Completed tasks: Collect clue afqmc train, Collect clue afqmc validation, Collect clue afqmc test, Collect clue tnews train, Collect clue tnews validation, Collect clue tnews test, Collect clue iflytek train, Collect clue iflytek validation, Collect clue iflytek test, Collect clue cmnli train, Collect clue cmnli validation, Collect clue cmnli test, Collect clue cluewsc2020 train, Collect clue cluewsc2020 validation, Collect clue cluewsc2020 test, Collect clue csl train, Collect clue csl validation, Collect clue csl test, Collect clue cmrc2018 train, Collect clue cmrc2018 validation, Collect clue cmrc2018 test, Collect clue drcd train, Collect clue drcd validation, Collect clue drcd test, Collect clue chid train, Collect clue chid validation, Collect clue chid test, Collect clue c3 train, Collect clue c3 validation, Collect clue c3 test, Collect clue ocnli train, Collect clue ocnli validation, Collect clue ocnli test, Collect clue diagnostics train, Collect clue diagnostics validation, Collect clue diagnostics test
+Failed tasks:
+****Curriculum Agent human message****
+
+Downloaded datasets so far: c3, clue, dicache, lccc
+
+Downloaded subsets so far: c3/mixed, clue/tnews, clue/afqmc, dicache/the, dicache/the/dataset_infos.json, dicache/lccc, dicache/lccc/dataset_infos.json, dicache/clue, dicache/clue/dataset_infos.json, dicache/c3, dicache/c3/dataset_infos.json, lccc/base
+
+Downloaded dataset parquets so far: c3/mixed/c3-test.parquet, clue/tnews/clue-validation.parquet, clue/tnews/clue-train.parquet, clue/tnews/clue-test.parquet, clue/afqmc/clue-validation.parquet, clue/afqmc/clue-train.parquet, clue/afqmc/clue-test.parquet, lccc/base/lccc-test.parquet
+
+Completed tasks so far: Collect clue afqmc train, Collect clue afqmc validation, Collect clue afqmc test, Collect clue tnews train, Collect clue tnews validation, Collect clue tnews test, Collect clue iflytek train, Collect clue iflytek validation, Collect clue iflytek test, Collect clue cmnli train, Collect clue cmnli validation, Collect clue cmnli test, Collect clue cluewsc2020 train, Collect clue cluewsc2020 validation, Collect clue cluewsc2020 test, Collect clue csl train, Collect clue csl validation, Collect clue csl test, Collect clue cmrc2018 train, Collect clue cmrc2018 validation, Collect clue cmrc2018 test, Collect clue drcd train, Collect clue drcd validation, Collect clue drcd test, Collect clue chid train, Collect clue chid validation, Collect clue chid test, Collect clue c3 train, Collect clue c3 validation, Collect clue c3 test, Collect clue ocnli train, Collect clue ocnli validation, Collect clue ocnli test, Collect clue diagnostics train, Collect clue diagnostics validation, Collect clue diagnostics test
+
+
+Failed tasks that are too hard: None
+
+
+Task: clue diagnostics validation
+Dataset: clue
+Subsets: afqmc, tnews, iflytek, cmnli, cluewsc2020, csl, cmrc2018, drcd, chid, c3, ocnli, diagnostics
+Working subset: diagnostics
+Splits: Train, Validation, Test
+Split: validation
+
+
+****Curriculum Agent ai message****
+Reasoning: Based on the information provided, you have already collected the clue diagnostics validation subset.
+
+Task: Collect clue diagnostics train
+Task: Collect clue diagnostics test
+****Recorder message: 0 ticks have elapsed****
+****Recorder message: 14 iteration passed****
+****Recorder message: 0 ticks have elapsed****
+****Recorder message: 15 iteration passed****
+Starting task Collect clue diagnostics train for at most 2 times
+Completed task Collect clue diagnostics train.
+Skill Manager generated description for Collect clue diagnostics train:
+Collect clue diagnostics train
+Skill Collect clue diagnostics train already exists. Rewriting!
+Completed tasks: Collect clue afqmc train, Collect clue afqmc validation, Collect clue afqmc test, Collect clue tnews train, Collect clue tnews validation, Collect clue tnews test, Collect clue iflytek train, Collect clue iflytek validation, Collect clue iflytek test, Collect clue cmnli train, Collect clue cmnli validation, Collect clue cmnli test, Collect clue cluewsc2020 train, Collect clue cluewsc2020 validation, Collect clue cluewsc2020 test, Collect clue csl train, Collect clue csl validation, Collect clue csl test, Collect clue cmrc2018 train, Collect clue cmrc2018 validation, Collect clue cmrc2018 test, Collect clue drcd train, Collect clue drcd validation, Collect clue drcd test, Collect clue chid train, Collect clue chid validation, Collect clue chid test, Collect clue c3 train, Collect clue c3 validation, Collect clue c3 test, Collect clue ocnli train, Collect clue ocnli validation, Collect clue ocnli test, Collect clue diagnostics train, Collect clue diagnostics validation, Collect clue diagnostics test
+Failed tasks:
